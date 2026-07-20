@@ -67,17 +67,21 @@ The tuned Logistic Regression model was deployed as an interactive **Streamlit**
 
 ### Home Page
 
-<img width="901" height="816" alt="image" src="https://github.com/user-attachments/assets/aeb9c7c1-e06e-4931-bffc-93d8e38b27c6" />
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aeb9c7c1-e06e-4931-bffc-93d8e38b27c6" width="700"/>
+</p>
 
 ### Prediction Result
 
-<img width="858" height="260" alt="image" src="https://github.com/user-attachments/assets/0c140ff7-91e9-469d-8e5a-eb86c4e79c46" />
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0c140ff7-91e9-469d-8e5a-eb86c4e79c46" width="700"/>
+</p>
 
 ### Feature Importance
 
-<img width="836" height="462" alt="image" src="https://github.com/user-attachments/assets/86f70919-7fe1-43c3-97ae-1ddff9478776" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/86f70919-7fe1-43c3-97ae-1ddff9478776" width="700"/>
+</p>
 
 
 ## Tech Stack
