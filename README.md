@@ -36,30 +36,38 @@ Several machine learning models were trained and evaluated to identify the best-
 
 Based on the evaluation metrics, *Logistic Regression* achieved the highest overall performance and was selected for further optimization through hyperparameter tuning.
 
-## Hyperparameter Tuning
+## Hyperparameter Tuning & Final Model
 
-To improve the performance of the selected model, **Logistic Regression** was optimized using **GridSearchCV** with 5-fold cross-validation. The hyperparameters were tuned using the **F1 Score** as the evaluation metric.
+To optimize the selected classifier, **Logistic Regression** was tuned using **GridSearchCV** with **5-fold stratified cross-validation**, using the **F1 Score** as the evaluation metric.
 
 ### Best Hyperparameters
 
 | Parameter | Value |
 |-----------|-------|
-| C | 0.1 |
-| Penalty | l2 |
-| Solver | liblinear |
+| **C** | 0.1 |
+| **Penalty** | l2 |
+| **Solver** | liblinear |
 
-### Best Cross-Validation Score
+**Best Cross-Validation F1 Score:** **0.8981**
 
-**F1 Score:** **0.8981**
+### Final Model Performance
 
-### Best Performing Classifier
+| Metric | Score |
+|--------|------:|
+| **Accuracy** | **0.86** |
+| **Precision** | **0.89** |
+| **Recall** | **0.90** |
+| **F1 Score** | **0.90** |
+| **ROC-AUC** | **0.94** |
 
-Although multiple machine learning models were evaluated and tuned, **Logistic Regression** was selected as the final model because it provided:
+### Best-performer classifier
 
-- High predictive performance
-- Excellent generalization on unseen data
-- Fast inference for real-time predictions
-- Model interpretability through feature coefficients, allowing the application to explain the factors influencing each prediction
+Although multiple machine learning models were evaluated, **Logistic Regression** was selected as the final model because it:
+
+- Achieved high predictive performance with strong generalization.
+- Matched the best tuned model (SVM) on F1 Score while remaining interpretable.
+- Provides fast inference for real-time predictions.
+- Offers explainability through feature coefficients, helping identify the factors influencing each prediction.
 
 The tuned Logistic Regression model was deployed as an interactive **Streamlit** web application for real-time student placement prediction.
 
@@ -133,19 +141,6 @@ streamlit run app.py
 This opens the app locally at `http://localhost:8501`. Alternatively, use
 the live deployed version linked at the top of this README.
 
-## Model Performance
-Five models were compared using 5-fold stratified cross-validation, then
-tuned via `GridSearchCV`. Logistic Regression was selected as the final
-model — it matched the top-performing tuned model (SVM) on F1 score while
-remaining fully interpretable.
-
-| Metric      | Test Set Score |
-|-------------|-----------------|
-| Accuracy    | 0.86            |
-| Precision   | ~0.89           |
-| Recall      | ~0.90           |
-| F1 Score    | ~0.90           |
-| ROC-AUC     | ~0.94           |
 
 ## Key Findings
 - 10th, 12th, and degree academic percentages are the strongest predictors of placement.
