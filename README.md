@@ -22,6 +22,64 @@ app — to predict whether a student is likely to be placed, and to explain
   coefficients
 - Full exploratory data analysis and model comparison notebooks included
 
+## Model Development & Evaluation
+
+Several machine learning models were trained and evaluated to identify the best-performing classifier for student placement prediction.
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|------|---------:|----------:|--------:|---------:|---------:|
+| Logistic Regression | *85.45%* | 89.07% | 89.82% | 89.33% | *93.93%* |
+| SVM | 83.68% | 85.76% | *91.49%* | 88.42% | 92.15% |
+| Random Forest | 82.54% | 85.69% | 89.78% | 87.33% | 92.35% |
+| KNN | 81.33% | 83.79% | 90.62% | 86.91% | 88.95% |
+| Gradient Boosting | 81.34% | 85.89% | 87.21% | 86.02% | 88.18% |
+
+Based on the evaluation metrics, *Logistic Regression* achieved the highest overall performance and was selected for further optimization through hyperparameter tuning.
+
+## Hyperparameter Tuning
+
+To improve the performance of the selected model, **Logistic Regression** was optimized using **GridSearchCV** with 5-fold cross-validation. The hyperparameters were tuned using the **F1 Score** as the evaluation metric.
+
+### Best Hyperparameters
+
+| Parameter | Value |
+|-----------|-------|
+| C | 0.1 |
+| Penalty | l2 |
+| Solver | liblinear |
+
+### Best Cross-Validation Score
+
+**F1 Score:** **0.8981**
+
+### Best Performing Classifier
+
+Although multiple machine learning models were evaluated and tuned, **Logistic Regression** was selected as the final model because it provided:
+
+- High predictive performance
+- Excellent generalization on unseen data
+- Fast inference for real-time predictions
+- Model interpretability through feature coefficients, allowing the application to explain the factors influencing each prediction
+
+The tuned Logistic Regression model was deployed as an interactive **Streamlit** web application for real-time student placement prediction.
+
+## Application Preview
+
+### Home Page
+
+<img width="901" height="816" alt="image" src="https://github.com/user-attachments/assets/aeb9c7c1-e06e-4931-bffc-93d8e38b27c6" />
+
+
+### Prediction Result
+
+<img width="858" height="260" alt="image" src="https://github.com/user-attachments/assets/0c140ff7-91e9-469d-8e5a-eb86c4e79c46" />
+
+
+### Feature Importance
+
+<img width="836" height="462" alt="image" src="https://github.com/user-attachments/assets/86f70919-7fe1-43c3-97ae-1ddff9478776" />
+
+
 ## Tech Stack
 - **Language:** Python
 - **Data handling:** pandas
